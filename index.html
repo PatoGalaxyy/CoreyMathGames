@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-#body {
+.body {
   background-color: "FFDEAD";
+}
+.lixoo{
+  justify-content: right;
+  display: flex;
 }
 #corey {
   position: absolute;
@@ -23,8 +27,9 @@
     <h1>Hiii sarahh ilyyy! :3</h1>
 
       <img src="img/coreyfront.png" alt="" style="max-width:30%;height:25%;" id="corey">
-
-    
+      <div class="lixoo col-md-12 col-sm-12">
+      <img src="img/lixo.png">
+      </div>
     
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -40,9 +45,11 @@ function dragElement(elmnt) {
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
+
   }
 
   function dragMouseDown(e) {
+    coreygrabbed();
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
@@ -68,8 +75,19 @@ function dragElement(elmnt) {
 
   function closeDragElement() {
     // stop moving when mouse button is released:
+    coreystand();
     document.onmouseup = null;
     document.onmousemove = null;
+  }
+  
+  function coreystand(){
+    const img=document.getElementById('corey');
+    img.src = 'img/coreyfront.png';
+  }
+
+  function coreygrabbed() {
+    const img=document.getElementById('corey');
+    img.src = 'img/coreygrab.png';
   }
 }
     </script>
